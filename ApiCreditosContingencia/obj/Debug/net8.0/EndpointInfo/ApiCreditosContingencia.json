@@ -1,0 +1,240 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API Créditos Contingencia",
+    "description": "API para gestionar créditos de clientes",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Creditos/modalidades": {
+      "get": {
+        "tags": [
+          "Creditos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Creditos/tiendas": {
+      "get": {
+        "tags": [
+          "Creditos"
+        ],
+        "parameters": [
+          {
+            "name": "marca",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Creditos/marcas": {
+      "get": {
+        "tags": [
+          "Creditos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Creditos/cuotas": {
+      "get": {
+        "tags": [
+          "Creditos"
+        ],
+        "parameters": [
+          {
+            "name": "modalidad",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Creditos/guardar": {
+      "post": {
+        "tags": [
+          "Creditos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreditoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreditoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreditoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Creditos/consultarCliente": {
+      "get": {
+        "tags": [
+          "Creditos"
+        ],
+        "parameters": [
+          {
+            "name": "nro",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Creditos/registrarNoCreado": {
+      "post": {
+        "tags": [
+          "Creditos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteNoCreadoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteNoCreadoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteNoCreadoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ClienteNoCreadoDto": {
+        "type": "object",
+        "properties": {
+          "nroDocumento": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreditoDto": {
+        "type": "object",
+        "properties": {
+          "nroDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "marca": {
+            "type": "string",
+            "nullable": true
+          },
+          "tienda": {
+            "type": "string",
+            "nullable": true
+          },
+          "obligacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "caja": {
+            "type": "string",
+            "nullable": true
+          },
+          "cajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorCredito": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorCuotaInicial": {
+            "type": "string",
+            "nullable": true
+          },
+          "interesTeorico": {
+            "type": "string",
+            "nullable": true
+          },
+          "ivaInteres": {
+            "type": "string",
+            "nullable": true
+          },
+          "pjTasaPeriodo": {
+            "type": "string",
+            "nullable": true
+          },
+          "psTasaEA": {
+            "type": "string",
+            "nullable": true
+          },
+          "descModalidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "numCuotas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

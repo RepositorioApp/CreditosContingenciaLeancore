@@ -1,0 +1,149 @@
+﻿@{
+	ViewData["Title"] = "Formulario de Crédito";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+	<h2 class="mb-4">@ViewData["Title"]</h2>
+	<div id="alertContainer"></div>
+	<div class="row mb-3">
+		<div class="col-md-3">
+			<label for="nroDocumento" class="form-label">Nro Documento:</label>
+			<input type="text" id="txtNroDocumento" class="form-control" required />
+		</div>
+		<div class="col-md-2 d-flex align-items-end">
+			<button type="button" id="btnConsultar" class="btn btn-primary w-100">Consultar Cliente</button>
+		</div>
+		<div class="col-md-3">
+			<label for="nroDocumento" class="form-label" id="lblNombre" style="display:none;">Nombre:</label>
+			<input type="text" id="txtNombre" class="form-control" disabled style="display:none;" />
+		</div>
+	</div>
+
+	<form id="formularioCredito" style="display:none;">
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<label for="marca" class="form-label">Marca*</label>
+				<select id="optMarca" class="form-select" required>
+					<option value="">Seleccione...</option>
+				</select>
+			</div>
+			<div class="col-md-4">
+				<label for="tienda" class="form-label">Tienda*</label>
+				<select id="optTienda" class="form-select" required>
+					<option value="">Seleccione...</option>
+				</select>
+				@* <input type="text" id="txtTienda" class="form-control" /> *@
+			</div>
+			<div class="col-md-4">
+				<label for="caja" class="form-label">Numero obligacion*</label>
+				<input type="text" id="txtNumeroObligacion" class="form-control" maxlength="14" />
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<label for="caja" class="form-label">Caja</label>
+				<input type="text" id="txtCaja" class="form-control"   />
+			</div>
+			<div class="col-md-4">
+				<label for="cajero" class="form-label">Cajero</label>
+				<input type="text" id="txtCajero" class="form-control" />
+			</div>
+			<div class="col-md-4">
+				<label for="valorCuotaInicial" class="form-label">Valor credito*</label>
+				<input type="text" id="txtValorCredito" class="form-control" oninput="validarEntero(this)" required/>
+			</div>
+		</div>
+
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<label for="valorCuotaInicial" class="form-label">Valor Cuota Inicial</label>
+				<input type="text" id="txtValorCuotaInicial" class="form-control" oninput="validarEntero(this)" />
+			</div>
+			<div class="col-md-4">
+				<label for="interesTeorico" class="form-label">Interés Teórico*</label>
+				<input type="text" id="txtInteresTeorico" class="form-control" required oninput="validarEntero(this)" />
+			</div>
+			<div class="col-md-4">
+				<label for="ivaInteres" class="form-label">IVA Interés*</label>
+				<input type="text" id="txtIvaInteres" class="form-control" required oninput="validarEntero(this)" />
+			</div>
+
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<label for="pjTasaPeriodo" class="form-label">PJ Tasa Periodo*</label>
+				<input type="text" id="txtPjTasaPeriodo" class="form-control" required oninput="validarDecimal(this)" />
+			</div>
+			<div class="col-md-4">
+				<label for="psTasaEA" class="form-label">PS Tasa EA*</label>
+				<input type="text" id="txtPsTasaEA" class="form-control" required oninput="validarDecimal(this)" />
+			</div>
+			<div class="col-md-4">
+				<label for="modalidad" class="form-label">Modalidad*</label>
+				<select id="optModalidad" class="form-select" required>
+					<option value="">Seleccione...</option>
+				</select>
+			</div>
+
+		</div>
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<label for="numCuotas" class="form-label">Número de Cuotas*</label>
+				<select id="optNumCuotas" class="form-select" required>
+					<option value="">Seleccione...</option>
+				</select>
+			</div>
+			<div class="col-md-4">
+				<label for="numCuotas" class="form-label">Fecha vencimiento</label>
+				<input type="date" id="txtFechaVencimiento" class="form-control"  />
+
+			</div>
+		</div>
+
+		<div class="row mt-6">
+			<div class="col-md-3 offset-md-3">
+				<button type="button" id="btnGuardar" class="btn btn-success w-100">Guardar Crédito</button>
+			</div>
+			<div class="col-md-3 offset-md-3">
+				<button type="button" id="btnCancelar" class="btn btn-danger w-100">Cancelar Crédito</button>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+@section Scripts {
+	@inject IConfiguration Configuration
+	<script>
+		const apiBaseUrl = '@Configuration["ApiUrl"]';
+	</script>
+	<script src="~/js/creditos.js"></script>
+	<script>
+			function validarEntero(input) {
+			const valor = input.value;
+			
+			input.value = input.value.replace(/[^0-9]/g, '');
+			
+			
+		}
+		function validarDecimal(input) {
+			const valor = input.value;
+
+			// Permite números con hasta 5 decimales, sin negativos
+			const regex = /^\d+(\.\d{0,5})?$/;
+
+			if (!regex.test(valor)) {
+				// Elimina caracteres inválidos
+				input.value = valor
+					.replace(/[^0-9.]/g, '')        // solo números y un punto
+					.replace(/(\..*)\./g, '$1');    // evita más de un punto
+			}
+		}
+
+
+	</script>
+}

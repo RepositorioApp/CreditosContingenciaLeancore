@@ -1,0 +1,15 @@
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\bin\Release\net8.0\BLL.deps.json
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\bin\Release\net8.0\BLL.dll
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\bin\Release\net8.0\BLL.pdb
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\bin\Release\net8.0\DataLayer.dll
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\bin\Release\net8.0\DataLayer.pdb
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.csproj.AssemblyReference.cache
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.AssemblyInfoInputs.cache
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.AssemblyInfo.cs
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.csproj.Up2Date
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.dll
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\refint\BLL.dll
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\BLL.pdb
+C:\Users\jalzate\source\repos\CreditosContingencia\BLL\obj\Release\net8.0\ref\BLL.dll

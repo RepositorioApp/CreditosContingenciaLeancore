@@ -1,0 +1,102 @@
+[
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "ConsultarCliente",
+    "RelativePath": "api/Creditos/consultarCliente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nro",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "ObtenerCuotas",
+    "RelativePath": "api/Creditos/cuotas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modalidad",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "GuardarCredito",
+    "RelativePath": "api/Creditos/guardar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BLL.Dto.CreditoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "obtenerMarcas",
+    "RelativePath": "api/Creditos/marcas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "ObtenerModalidades",
+    "RelativePath": "api/Creditos/modalidades",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "RegistrarNoCreado",
+    "RelativePath": "api/Creditos/registrarNoCreado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BLL.Dto.ClienteNoCreadoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiCreditosContingencia.Controllers.CreditosController",
+    "Method": "ObtenerTiendas",
+    "RelativePath": "api/Creditos/tiendas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "marca",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
